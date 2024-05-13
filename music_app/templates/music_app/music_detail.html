@@ -18,16 +18,16 @@
                                     <b>
                                         <!--<span style="color: green;">-->
                                         <!--    <span class="d-none d-md-inline">[New Music]</span>-->
-                                        </span class="p-3">
-                                        Cure - Don Louy ft Lincoln Gideon
+                                        <span class="p-3">
+                                        {{song.name}}
+                                        </span>
                                     </b>
                                 </h1>
                                 <hr>
-                                <img src="https://musicreel.com.ng/storage/music_cover_arts/Cure - Don Louy ft Lincoln Gideon1697853664(musicreel.com.ng).jpg"
-                                    class="img-fluid img-show p-0 p-md-3 mb-3 " alt="Cure - Don Louy ft Lincoln Gideon">
+                                <img src="{{song.imageURL}}" class="img-fluid img-show p-0 p-md-3 mb-3 " alt="">
                                 <br>
                                 <h1 class="p-0 p-md-3 reduce-second-h1 text-left text-md-left">
-                                    <b>Cure - Don Louy ft Lincoln Gideon</b>
+                                    <b>{{song.name}}</b>
                                 </h1> <br>
                                 <h5 class="p-0 p-md-3 lead text-left text-md-left">
                                     Exceptional artiste and music producer Don Louy Known for his unique style, linked up with Lincoln Gideon on this one titled Cure. You are Surely going to enjoy it. Enjoy and Share!!!
@@ -36,23 +36,23 @@
                                 <h4 class="p-0 p-md-3 text-center"><b>Download Below</b></h4> <br>
                                 <hr>
                                 <p class="text-center">
-                                    <audio controls class="text-center" id="audio-tag" controlsList="nodownload"
-                                        style="width: 100%; max-width: 600px;" onplay="countStream()">
-                                        <source src="https://musicreel.com.ng/storage/songs/Cure1697853665(musicreel.com.ng).mp3" type="audio/ogg">
-                                        <source src="https://musicreel.com.ng/storage/songs/Cure1697853665(musicreel.com.ng).mp3" type="audio/mpeg">
+                                    <audio controls class="text-center" id="audio-tag"
+                                        style="width: 100%; max-width: 600px;" onplay='location.href="{% url "music_app:play_success" song.id %}" '>
+                                        <source src="{% if song.audio_file %} {{ song.audio_file.url }} {% endif %}" type="audio/ogg">
+                                        <source src="{% if song.audio_file %} {{ song.audio_file.url }} {% endif %}" type="audio/mpeg">
                                         Your browser does not support the audio element.
                                     </audio>
 									<span class="text-success">
-                                        <b><span class="badge badge-dark">8plays</span></b>
+                                        <b><span class="badge badge-dark">{{song.play_count}}plays</span></b>
                                     </span>
                                 </p>
                                 <p class="text-center">
-                                <a href="/storage/songs/Cure1697853665(musicreel.com.ng).mp3"
-                                        download="Cure1697853665(musicreel.com.ng).mp3" onclick="RecordDownload()"
-                                        class="btn btn-success custom-btn">Download <i class="fa fa-chevron-down"></i></a>
+                                <a href="{{ song.audio_file.url }}" download="">
+                                <button class="btn btn-success custom-btn" onclick='location.href="{% url "music_app:download_success" song.id %}" '>Download<i class="fa fa-chevron-down"></i></button>
+                                </a>
                                     <br>
                                     <span class="text-success">
-                                        <b><span class="badge badge-dark">5downloads</span></b>
+                                        <b><span class="badge badge-dark">{{song.download_count}}downloads</span></b>
                                     </span>
                                 </p>
                                 <br>

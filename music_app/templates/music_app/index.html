@@ -1,186 +1,74 @@
 {% extends 'music_app/main.html' %}
 {% load static %}
 {% block content %}
-    <div class="py-2 mb-3" id="full-body">
-            <div class="container mt-5">
+  <div class="py-2 mb-3" id="full-body">
+      <div class="container mt-5">
         <div class="row ">
             <div class="col-md-8">
                 <div style="background-color: #169c46;" class=" text-white p-2 text-center text-md-left mb-3 rounded mt-4">
                     <h1 class="reduce-h1">Trending Music</h1>
                 </div>
                 <div class="row">
-                    {% for song in songs %}
-                    <div class="col-sm-4 col-md-6 col-lg-4 col-xl-4 mb-4">
-                        <a href="https://musicreel.com.ng/download-music/happy-day-zeedon" class="music-link ">
+                      {% for song in page_obj.object_list %}
+                      <div class="col-sm-4 col-md-6 col-lg-4 col-xl-4 mb-4">
+                        <a href="{% url 'music_app:music_detail' song.id %}" class="music-link ">
                             <div class="music-box scale-for-music">
-                                <div class="card shadow">
-                                    <img class="img-fluid " src="https://musicreel.com.ng/storage/music_cover_arts/Happy Day - Zeedon1704881346(musicreel.com.ng).png" alt="Happy Day - Zeedon">
-                                        <div class="card-text p-4 text-center">
-                                            <div><i style="font-size: 10px;  padding: 10px;" class="fas fa-play bg-success  mb-1 text-light rounded-circle text-small"></i></div>
-                                            <h1 class="reduce-music-title">[New Music] <br> <span style="">Happy Day - Zee..</span></h1>
-                                        </div>
+                                <div class="card shadow"><img class="img-fluid " src="{{song.imageURL}}" alt="Happy Day - Zeedon">
+                                    <div class="card-text p-4 text-center">
+                                        <div><i style="font-size: 10px;  padding: 10px;" class="fas fa-play bg-success  mb-1 text-light rounded-circle text-small"></i></div>
+                                        <h1 class="reduce-music-title">[New Music] <br> <span style="">{{song.name}}</span></h1>
                                     </div>
                                 </div>
-                            </a>
-                        {% endfor %}
-                        </div>
-                    <div class="col-sm-4 col-md-6 col-lg-4 col-xl-4 mb-4">
-                        <a href="https://musicreel.com.ng/download-music/urgent-2k-king-aleey-popstar" class="music-link ">
-                            <div class="music-box scale-for-music">
-                                <div class="card shadow">
-                                    <img class="img-fluid " src="https://musicreel.com.ng/storage/music_cover_arts/Urgent 2k - King Aleey Popstar1702383660(musicreel.com.ng).jpg" alt="Urgent 2k - King Aleey Popstar">
-                                        <div class="card-text p-4 text-center">
-                                            <div><i style="font-size: 10px;  padding: 10px;" class="fas fa-play bg-success  mb-1 text-light rounded-circle text-small"></i></div>
-                                            <h1 class="reduce-music-title">[New Music] <br> <span style="">Urgent 2k - Kin..</span></h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-                    <div class="col-sm-4 col-md-6 col-lg-4 col-xl-4 mb-4">
-                        <a href="https://musicreel.com.ng/download-music/la-vida-k7lsdom" class="music-link ">
-                            <div class="music-box scale-for-music">
-                                <div class="card shadow">
-                                    <img class="img-fluid " src="https://musicreel.com.ng/storage/music_cover_arts/La Vida - K7LSDOM1701101456(musicreel.com.ng).jpeg" alt="La Vida - K7LSDOM">
-                                        <div class="card-text p-4 text-center">
-                                            <div><i style="font-size: 10px;  padding: 10px;" class="fas fa-play bg-success  mb-1 text-light rounded-circle text-small"></i></div>
-                                            <h1 class="reduce-music-title">[New Music] <br> <span style="">La Vida - K7LSD..</span></h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-                    <div class="col-sm-4 col-md-6 col-lg-4 col-xl-4 mb-4">
-                        <a href="https://musicreel.com.ng/download-music/angelina-josh-veed" class="music-link ">
-                            <div class="music-box scale-for-music">
-                                <div class="card shadow">
-                                    <img class="img-fluid " src="https://musicreel.com.ng/storage/music_cover_arts/Angelina - Josh Veed1699422429(musicreel.com.ng).jpg" alt="Angelina - Josh Veed">
-                                        <div class="card-text p-4 text-center">
-                                            <div><i style="font-size: 10px;  padding: 10px;" class="fas fa-play bg-success  mb-1 text-light rounded-circle text-small"></i></div>
-                                            <h1 class="reduce-music-title">[New Music] <br> <span style="">Angelina - Josh..</span></h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-                    <div class="col-sm-4 col-md-6 col-lg-4 col-xl-4 mb-4">
-                        <a href="https://musicreel.com.ng/download-music/yolo-tekkk" class="music-link ">
-                            <div class="music-box scale-for-music">
-                                <div class="card shadow">
-                                    <img class="img-fluid " src="https://musicreel.com.ng/storage/music_cover_arts/Yolo - Tekkk1698862833(musicreel.com.ng).png" alt="Yolo - Tekkk">
-                                        <div class="card-text p-4 text-center">
-                                            <div><i style="font-size: 10px;  padding: 10px;" class="fas fa-play bg-success  mb-1 text-light rounded-circle text-small"></i></div>
-                                            <h1 class="reduce-music-title">[New Music] <br> <span style="">Yolo - Tekkk</span></h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-                    <div class="col-sm-4 col-md-6 col-lg-4 col-xl-4 mb-4">
-                        <a href="https://musicreel.com.ng/download-music/cure-don-louy-ft-lincoln-gideon" class="music-link ">
-                            <div class="music-box scale-for-music">
-                                <div class="card shadow">
-                                    <img class="img-fluid " src="https://musicreel.com.ng/storage/music_cover_arts/Cure - Don Louy ft Lincoln Gideon1697853664(musicreel.com.ng).jpg" alt="Cure - Don Louy ft Lincoln Gideon">
-                                       <div class="card-text p-4 text-center">
-                                            <div><i style="font-size: 10px;  padding: 10px;" class="fas fa-play bg-success  mb-1 text-light rounded-circle text-small"></i></div>
-                                            <h1 class="reduce-music-title">[New Music] <br> <span style="">Cure - Don Louy..</span></h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-                    <div class="col-sm-4 col-md-6 col-lg-4 col-xl-4 mb-4">
-                        <a href="https://musicreel.com.ng/download-music/nagode-peter-ogar" class="music-link ">
-                            <div class="music-box scale-for-music">
-                                <div class="card shadow">
-                                    <img class="img-fluid " src="https://musicreel.com.ng/storage/music_cover_arts/Nagode - Peter Ogar1697781239(musicreel.com.ng).jpg" alt="Nagode - Peter Ogar">
-                                        <div class="card-text p-4 text-center">
-                                            <div><i style="font-size: 10px;  padding: 10px;" class="fas fa-play bg-success  mb-1 text-light rounded-circle text-small"></i>
-                                            </div>
-                                            <h1 class="reduce-music-title">[New Music] <br> <span style="">Nagode - Peter..</span></h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-                    <div class="col-sm-4 col-md-6 col-lg-4 col-xl-4 mb-4">
-                        <a href="https://musicreel.com.ng/download-music/fine-boy-from-taraba-alinco" class="music-link ">
-                            <div class="music-box scale-for-music">
-                                <div class="card shadow">
-                                    <img class="img-fluid " src="https://musicreel.com.ng/storage/music_cover_arts/Fine Boy from Taraba - Alinco1688168078(musicreel.com.ng).jpg" alt="Fine Boy from Taraba - Alinco">
-                                        <div class="card-text p-4 text-center">
-                                            <div><i style="font-size: 10px;  padding: 10px;" class="fas fa-play bg-success  mb-1 text-light rounded-circle text-small"></i></div>
-                                            <h1 class="reduce-music-title">[New Music] <br> <span style="">Fine Boy from T..</span></h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-                    <div class="col-sm-4 col-md-6 col-lg-4 col-xl-4 mb-4">
-                        <a href="https://musicreel.com.ng/download-music/dj-cinch-basu-freestyle" class="music-link ">
-                            <div class="music-box scale-for-music">
-                                <div class="card shadow">
-                                    <img class="img-fluid " src="https://musicreel.com.ng/storage/music_cover_arts/DJ Cinch – Basu (Freestyle)1686398547(musicreel.com.ng).jpeg" alt="DJ Cinch – Basu (Freestyle)">
-                                        <div class="card-text p-4 text-center">
-                                            <div><i style="font-size: 10px;  padding: 10px;" class="fas fa-play bg-success  mb-1 text-light rounded-circle text-small"></i></div>
-                                            <h1 class="reduce-music-title">[New Music] <br> <span style="">DJ Cinch – Basu..</span></h1>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div>
-
-                </div><div class="mb-5">&nbsp;</div>
-                <div class="d-flex justify-content-center align-items-center mx-auto mb-5">
+                            </div>
+                        </a>
+                    </div>
+                     {% endfor %}
+                  <div class="mb-5">&nbsp;</div>
+                  <div class="d-flex justify-content-center align-items-center mx-auto mb-5">
                     <nav>
                       <ul class="pagination">
-                          <li class="page-item disabled" aria-disabled="true" aria-label="&laquo; Previous">
-                           <span class="page-link text-success"  aria-hidden="true"><i class="fa fa-chevron-left"></i></span>
+                          {%if page_obj.has_previous %}
+                          <li class="page-item"><a class="page-link text-success" href="?page={{page_obj.previous_page_number}}" rel="Previous"  aria-label="&laquo; Previous"><i class="fa fa-chevron-left"></i></a>
                           </li>
-                          <li  class="page-item  text-light active"  aria-current="page"><span class="page-link text-light" >1</span></li>
-                          <li class="page-item text-success "><a class="page-link text-success"  href="https://musicreel.com.ng?page=2">2</a></li>
-                          <li class="page-item text-success "><a class="page-link text-success"  href="https://musicreel.com.ng?page=3">3</a></li>
-                          <li class="page-item"><a class="page-link text-success" href="https://musicreel.com.ng?page=2" rel="next" aria-label="Next &raquo;"><i class="fa fa-chevron-right"></i></a></li>
+                          {% endif %}
+                          {% for page_number in page_obj.paginator.page_range %}
+                          <li class="page-item text-success {% if page_number == page_obj.number %}active{% endif %} "><a class="page-link text-{% if page_number == page_obj.number %}light{% else %}success{% endif %}"  href="?page={{page_number}}">{{page_number}}</a></li>
+                          {% endfor %}
+                          {%if page_obj.has_next %}
+                          <li class="page-item"><a class="page-link text-success" href="?page={{page_obj.next_page_number}}" rel="next" aria-label="Next &raquo;"><i class="fa fa-chevron-right"></i></a>
+                          </li>
+                         {% endif %}
                      </ul>
-                 </nav>
+                    </nav>
                 </div>
             </div>
+        </div>
             <div class="col-md-4">
-                <div class="bg-success text-white p-2 text-center text-md-left mb-3 rounded mt-4">
-                    <h1 class="reduce-h1">Most Streamed Song</h1>
-                </div>
+                <div class="bg-success text-white p-2 text-center text-md-left mb-3 ml-3 rounded mt-4"><h1 class="reduce-h1">Most Streamed Song</h1></div>
                 <a href="https://musicreel.com.ng/download-music/nagode-peter-ogar" class="music-link">
-                    <div class="card shadow-sm"><img class="img-fluid" src="https://musicreel.com.ng/storage/music_cover_arts/Nagode - Peter Ogar1697781239(musicreel.com.ng).jpg"class="mr-3" alt="Nagode - Peter Ogar" />
+                    <div class="card shadow-sm">
+                        <img class="img-fluid" src="https://musicreel.com.ng/storage/music_cover_arts/Nagode - Peter Ogar1697781239(musicreel.com.ng).jpg"
+                             class="mr-3" alt="Nagode - Peter Ogar" />
                         <h5 class="text-center p-3">Nagode - Peter Ogar</h5>
                     </div>
                 </a>
-                <div class="bg-success text-white p-2 text-center text-md-left mb-3 rounded mt-4">
-                    <h1 class="reduce-h1">Most Downloaded Song</h1>
-                </div>
+                <div class="bg-success text-white p-2 text-center text-md-left mb-3 rounded mt-4"><h1 class="reduce-h1">Most Downloaded Song</h1></div>
                 <a href="https://musicreel.com.ng/download-music/nagode-peter-ogar" class="music-link">
-                        <div class="card shadow-sm">
-                            <img class="img-fluid"
-                                src="https://musicreel.com.ng/storage/music_cover_arts/Nagode - Peter Ogar1697781239(musicreel.com.ng).jpg" class="mr-3"
-                                alt="Nagode - Peter Ogar" />
+                    <div class="card shadow-sm">
+                        <img class="img-fluid"
+                             src="https://musicreel.com.ng/storage/music_cover_arts/Nagode - Peter Ogar1697781239(musicreel.com.ng).jpg" class="mr-3"
+                             alt="Nagode - Peter Ogar" />
                             <h5 class="text-center p-3">Nagode - Peter Ogar</h5>
-                        </div>
+                    </div>
                 </a>
                 <div class="bg-success text-white p-2 text-center text-md-left mb-3 rounded mt-4">
                     <h1 class="reduce-h1">Albums/Eps</h1>
                 </div>
-                <p>More Albums/Eps Coming</p><a class="btn btn-success btn-block" href="https://musicreel.com.ng/all-albums-and-eps">see more</a>
+                <p>More Albums/Eps Coming</p>
+                <a class="btn btn-success btn-block" href="https://musicreel.com.ng/all-albums-and-eps">see more</a>
             </div>
         </div>
-    </div>
+     </div>
+  </div>
 
-    </div>
-
-{% endblock content %}
+ {% endblock content %}

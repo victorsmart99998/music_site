@@ -38,17 +38,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PR5YMC467P"></script>
     <script type='text/javascript'
         src='https://platform-api.sharethis.com/js/sharethis.js#property=5cd57de93255ff0012e3812e&product=sticky-share-buttons'
-        async='async'></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-PR5YMC467P');
-    </script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6789765138719033"
         crossorigin="anonymous"></script>
 
@@ -76,26 +66,7 @@
                         href="https://musicreel.com.ng/top-ten-tracks">Top 10 Music <span class="sr-only"></span></a>
                 </li>
             </ul>
-
-                            <div wire:id="e1zLA5GQjbUXcZaejvy6" wire:initial-data="{&quot;fingerprint&quot;:{&quot;id&quot;:&quot;e1zLA5GQjbUXcZaejvy6&quot;,&quot;name&quot;:&quot;search&quot;,&quot;locale&quot;:&quot;en&quot;,&quot;path&quot;:&quot;\/&quot;,&quot;method&quot;:&quot;GET&quot;,&quot;v&quot;:&quot;acj&quot;},&quot;effects&quot;:{&quot;listeners&quot;:[]},&quot;serverMemo&quot;:{&quot;children&quot;:[],&quot;errors&quot;:[],&quot;htmlHash&quot;:&quot;13549008&quot;,&quot;data&quot;:{&quot;search&quot;:&quot;&quot;},&quot;dataMeta&quot;:[],&quot;checksum&quot;:&quot;bbf1fbfc6dd8248ee3871dd498f56a02aecb3ac852d694ba25143626fe3442ac&quot;}}" class="position-relative " x-data="{ isOpen: true }" @click.away="isOpen = false; removeBackDrop();">
-    <input @focus="isOpen = true" @keydown="isOpen = true" @keydown.escape.window="isOpen = false"
-        @keydown.shift.tab="isOpen = false" x-ref="search" id="search-box"
-        @keydown.window="
-        if(event.keyCode === 191){
-            event.preventDefault();
-            $refs.search.focus();
-        }
-    "
-        wire:model.debounce.500ms="search" class="form-control mr-sm-2 border-radius-custom"
-        placeholder="&#x1F50D; Search (press / to focus)">
-    <div wire:loading class="position-absolute spinner-border spinner-border-sm mt-2 text-success  spinner-search"
-        role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
-
-</div>
-
-<!-- Livewire Component wire-end:e1zLA5GQjbUXcZaejvy6 -->                    </div>
+        </div>
     </nav>
  <div class="container">
 	 {% block content %}
