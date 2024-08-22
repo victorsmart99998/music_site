@@ -13,9 +13,9 @@
                       <div class="col-sm-4 col-md-6 col-lg-4 col-xl-4 mb-4">
                         <a href="{% url 'music_app:music_detail' song.id %}" class="music-link ">
                             <div class="music-box scale-for-music">
-                                <div class="card shadow"><img class="img-fluid " src="{{song.imageURL}}" alt="Happy Day - Zeedon">
+                                <div class="card shadow"><img class="img-fluid " src="{{song.imageURL}}" alt="{{song.name}}">
                                     <div class="card-text p-4 text-center">
-                                        <div><i style="font-size: 10px;  padding: 10px;" class="fas fa-play bg-success  mb-1 text-light rounded-circle text-small"></i></div>
+                                        <div><i style="font-size: 10px;  padding: 10px;" class="fas fa-play bg-success mb-1 text-light rounded-circle text-small"></i></div>
                                         <h1 class="reduce-music-title">[New Music] <br> <span style="">{{song.name}}</span></h1>
                                     </div>
                                 </div>
@@ -45,7 +45,7 @@
         </div>
             <div class="col-md-4">
                 <div class="bg-success text-white p-2 text-center text-md-left mb-3 ml-3 rounded mt-4"><h1 class="reduce-h1">Most Streamed Song</h1></div>
-                <a href="https://musicreel.com.ng/download-music/nagode-peter-ogar" class="music-link">
+                <a href="{% url 'music_app:music_detail' 6 %}" class="music-link">
                     <div class="card shadow-sm">
                         <img class="img-fluid" src="https://musicreel.com.ng/storage/music_cover_arts/Nagode - Peter Ogar1697781239(musicreel.com.ng).jpg"
                              class="mr-3" alt="Nagode - Peter Ogar" />
@@ -53,7 +53,7 @@
                     </div>
                 </a>
                 <div class="bg-success text-white p-2 text-center text-md-left mb-3 rounded mt-4"><h1 class="reduce-h1">Most Downloaded Song</h1></div>
-                <a href="https://musicreel.com.ng/download-music/nagode-peter-ogar" class="music-link">
+                <a href="{% url 'music_app:music_detail' 6 %}" class="music-link">
                     <div class="card shadow-sm">
                         <img class="img-fluid"
                              src="https://musicreel.com.ng/storage/music_cover_arts/Nagode - Peter Ogar1697781239(musicreel.com.ng).jpg" class="mr-3"
@@ -65,7 +65,7 @@
                     <h1 class="reduce-h1">Albums/Eps</h1>
                 </div>
                 <p>More Albums/Eps Coming</p>
-                <a class="btn btn-success btn-block" href="https://musicreel.com.ng/all-albums-and-eps">see more</a>
+                <a class="btn btn-success btn-block" href="#">see more</a>
             </div>
         </div>
      </div>

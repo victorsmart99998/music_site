@@ -15,8 +15,7 @@
     <meta name="description" content="Get Realtime number of streams and downloads on musicreel">
     <meta name="keywords"
         content="Music reel, Music, songs, download songs, upload music, get Music stream count, Upload Ep, Upload Album">
-    <meta name="author" content="Timothy Iloba">
-    <meta property="og:image" content="https://musicreel.com.ng/img/musicreel-homepage.jpg">
+    <meta name="author" content="Ebufy">
     <meta property="og:image:type" content="">
     <meta property="og:type" content="image/jpeg">
     <meta property="og:title" content="Musicreel ~ Not your regular music blog">
@@ -26,6 +25,10 @@
     <meta property="og:url" content="https://musicreel.com.ng">
 
     <link rel="icon" href="https://musicreel.com.ng/img/favicon.png">
+
+    <!-- jquery -->
+    <script src="{% static 'js/jquery-3.7.1.js' %}"></script>
+
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://musicreel.com.ng/css/app.css">
 
@@ -47,7 +50,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <a class="navbar-brand" href="https://musicreel.com.ng">
+        <a class="navbar-brand" href="{% url 'music_app:index' %}">
             <img class="nav-logo p-3" src="https://musicreel.com.ng/img/musicreel-small.png" alt="Musicreel">
         </a>
 
@@ -63,7 +66,7 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item  mr-3 mb-3 mb-md-0 mb-lg-0">
                     <a class="btn btn-success custom-btn text-light mb-2 mb-md-0 mt-3 mt-md-0 btn-block"
-                        href="https://musicreel.com.ng/top-ten-tracks">Top 10 Music <span class="sr-only"></span></a>
+                        href="#">Top 10 Music <span class="sr-only"></span></a>
                 </li>
             </ul>
         </div>
@@ -80,31 +83,31 @@
                     <div class="row text-center">
                         <div class="col-md-4 text-center text-md-left">
                             <h3>Categories</h3>
-                            <p><a class="music-link" href="https://musicreel.com.ng/top-ten-tracks">Top 10</a></p>
-                            <p><a class="music-link" href="https://musicreel.com.ng/all-albums-and-eps">Eps</a></p>
-                            <p><a class="music-link" href="https://musicreel.com.ng/all-albums-and-eps">Albums</a></p>
+                            <p><a class="music-link" href="#">Top 10</a></p>
+                            <p><a class="music-link" href="#">Eps</a></p>
+                            <p><a class="music-link" href="#">Albums</a></p>
                         </div>
 
                         <div class="col-md-4 text-center text-md-left">
                             <h3>Information</h3>
                             <p><a class="music-link" target="_blank"
-                                    href="https://wa.me/+2348185375580?text=I%20want%20to%20upload%20my%20music%20on%20musicreel">Whatsapp
+                                    href="https://wa.me/+2348107876238?text=I%20want%20to%20upload%20my%20music%20on%20musicreel">Whatsapp
                                     us
                                 </a></p>
                             <p><a class="music-link" target="_blank"
-                                    href="https://wa.me/+2348185375580?text=I%20want%20to%20upload%20my%20music%20on%20musicreel">Promote
+                                    href="https://wa.me/+2348107876238?text=I%20want%20to%20upload%20my%20music%20on%20musicreel">Promote
                                     Music</a></p>
                             <p><a class="music-link" target="_blank"
-                                    href="https://wa.me/+2348185375580?text=I%20want%20to%20become%20an%20admin%20on%20musicreel">Become
+                                    href="https://wa.me/+2348107876238?text=I%20want%20to%20become%20an%20admin%20on%20musicreel">Become
                                     an Admin</a></p>
                         </div>
                         <div class="col-md-4 text-center text-md-left">
                             <h3>Reach us</h3>
                             <p><a class="music-link" target="_blank"
-                                    href="https://www.instagram.com/musicreel.com.ng/">Instagram</a></p>
-                            <p><a class="music-link" target="_blank" href="https://web.facebook.com/musicreel2">Facebook
+                                    href="#">Instagram</a></p>
+                            <p><a class="music-link" target="_blank" href="#">Facebook
                                 </a></p>
-                            <p><a class="music-link" target="_blank" href="https://twitter.com/MusicReel1">Twitter</a>
+                            <p><a class="music-link" target="_blank" href="#">Twitter</a>
                             </p>
                         </div>
                     </div>
@@ -115,44 +118,44 @@
         <br> <br>
         <div class="d-flex justify-content-center">
             <div class="ml-3">
-                <p><a class="music-link" target="" href="https://musicreel.com.ng/contact-us">
+                <p><a class="music-link" target="" href="#">
                         Contact us</a>
                 </p>
             </div>
             <div class="ml-3">
-                <p><a class="music-link" target="" href="https://musicreel.com.ng/privacy-policy">
+                <p><a class="music-link" target="" href="#">
                         Privacy Policy</a>
                 </p>
             </div>
             <div class="ml-3">
-                <p><a class="music-link" target="" href="https://musicreel.com.ng/about-us">
+                <p><a class="music-link" target="" href="#">
                         About us</a>
                 </p>
             </div>
         </div>
         <div class="d-flex justify-content-center">
             <div class="ml-3">
-                <p><a class="music-link" target="" href="https://musicreel.com.ng/website-terms-of-use">
+                <p><a class="music-link" target="" href="#">
                         Website Terms of use</a>
                 </p>
             </div>
             <div class="ml-3">
-                <p><a class="music-link" target="" href="https://musicreel.com.ng/copyrights">
+                <p><a class="music-link" target="" href="#">
                         Copyright & DMCA Takedowns </a>
                 </p>
             </div>
             <div class="ml-3">
-                <p><a class="music-link" target="" href="https://musicreel.com.ng/report-a-problem">
+                <p><a class="music-link" target="" href="#">
                         Report a Problem</a>
                 </p>
             </div>
         </div>
         <hr style="border: .5px solid black;">
         <div class="text-center p-3 p-md-2">
-            developed by <a target="_blank" class="dev-link" href="https://timothyiloba.com">Timothy Iloba</a> &copy;
+            developed by <a target="_blank" class="dev-link" href="#">Ebufy</a> &copy;
             2024</div>
     </footer>
-
+    <script src="{% static 'js/function.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     </script>

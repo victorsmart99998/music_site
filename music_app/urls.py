@@ -10,4 +10,5 @@ urlpatterns = [
     path('music_detail/<int:pk>/', views.music_detail, name="music_detail"),
     path('download_success/<int:pk>/', views.download_success, name="download_success"),
     path('play_success/<int:pk>/', views.play_success, name="play_success"),
+    path('ajax_add_review/<int:pk>/', views.ajax_add_review, name="ajax_add_review"),
 ]
